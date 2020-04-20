@@ -1,6 +1,9 @@
 backend:
   name: github
   repo: atapas/gatsby-all-in-one
+  branch: master
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 media_folder: static/assets
 public_folder: /assets
 collections:

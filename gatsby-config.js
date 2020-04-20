@@ -13,6 +13,7 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {

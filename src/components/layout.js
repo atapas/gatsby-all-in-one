@@ -44,6 +44,18 @@ export default ({ children }) => {
         About
       </Link>
       {children}
+
+      <footer 
+        css={css`
+            padding: ${rhythm(0.5)};
+            background-color: #ebebeb;
+            border: 1px solid #ebebeb;
+        `}
+      >
+        <Link to={`/`}>Home</Link> {' | '}
+        <Link to={`/about/`} >About</Link> {' | '}
+        <a href={`/admin/`} target='_blank'> admin </a>
+      </footer>
     </div>
   )
 }

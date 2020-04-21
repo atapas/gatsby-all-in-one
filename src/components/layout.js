@@ -54,7 +54,7 @@ export default ({ children }) => {
       >
         <Link to={`/`}>Home</Link> {' | '}
         <Link to={`/about/`} >About</Link> {' | '}
-        <a href={`/admin/`} target='_blank'> admin </a>
+        <a href={`/admin/`} target='_blank' rel="noopener noreferrer"> admin </a>
       </footer>
     </div>
   )

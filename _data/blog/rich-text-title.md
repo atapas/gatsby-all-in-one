@@ -1,6 +1,6 @@
 ---
 date: 2020-04-21T07:44:32.986Z
-title: Rich Text Title
+title: SG - Rich Text Title
 metaDescription: Is Meta Description helps to search images? Then what are the
   conventions to write?
 ---

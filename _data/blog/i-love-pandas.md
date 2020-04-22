@@ -2,11 +2,12 @@
 date: 2020-04-20T07:55:53.947Z
 title: I Love Pandas
 thumbnail: /assets/cover.png
-category: "tech"
+category: tech
 tags:
-    - programming
-    - stuff
-    - other
+  - programming
+  - stuff
+  - other
+  - panda
 ---
 # My Love for Pandas
 

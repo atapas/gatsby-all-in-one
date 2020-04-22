@@ -27,3 +27,9 @@ collections:
         name: metaDescription
         widget: text
         required: false
+      - label: Category
+        name: category 
+        widget: string
+      - label: Tags
+        name: tags
+        widget: list

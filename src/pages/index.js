@@ -3,6 +3,7 @@ import { css } from "@emotion/core"
 import { Link, graphql } from "gatsby"
 import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
+import TagCapsules from '../components/tagCapsules';
 
 export default ({ data }) => {
   return (
@@ -42,6 +43,7 @@ export default ({ data }) => {
               </h3>
               <p>{node.excerpt}</p>
             </Link>
+            <TagCapsules tags={node.frontmatter.tags} />
           </div>
         ))}
       </div>

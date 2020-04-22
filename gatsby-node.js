@@ -1,5 +1,6 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require(`path`);
+const _ = require("lodash");
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -23,21 +24,44 @@ exports.createPages = async ({ graphql, actions }) => {
             fields {
               slug
             }
+            frontmatter {
+              title
+              tags
+              category
+              date
+            }
           }
         }
       }
     }
-  `)
+  `);
+  const tagSet = new Set();
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  result.data.allMarkdownRemark.edges.forEach((edge) => {
+    
     createPage({
-      path: node.fields.slug,
+      path: edge.node.fields.slug,
       component: path.resolve(`./src/templates/blog-post.js`),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
-        slug: node.fields.slug,
+        slug: edge.node.fields.slug,
       },
-    })
+    });
+
+    // Generate a list of tags
+    if (edge.node.frontmatter.tags) {
+      edge.node.frontmatter.tags.forEach(tag => {
+        tagSet.add(tag);
+      });
+    }
+    tagSet.forEach(tag => {
+      createPage({
+        path: `/tags/${_.kebabCase(tag)}/`,
+        component: path.resolve(`./src/templates/tagged-post.js`),
+        context: { tag }
+      });
+    });
+
   })
 }

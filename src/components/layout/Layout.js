@@ -1,8 +1,10 @@
 import React from "react";
 import { css } from "@emotion/core";
 import { useStaticQuery, Link, graphql } from "gatsby";
+import { rhythm } from "../../utils/typography";
 
-import { rhythm } from "../../utils/typography"
+import CategoryList from '../categories/CategoryList';
+
 export default ({ children }) => {
   const data = useStaticQuery(
     graphql`
@@ -24,6 +26,7 @@ export default ({ children }) => {
         padding-top: ${rhythm(1.5)};
       `}
     >
+      
       <Link to={`/`}>
         <h3
           css={css`
@@ -43,6 +46,7 @@ export default ({ children }) => {
       >
         About
       </Link>
+      <CategoryList />
       {children}
 
       <footer 

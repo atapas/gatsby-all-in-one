@@ -1,6 +1,7 @@
 ---
 date: 2020-04-20T10:41:16.229Z
 title: Test title
+category: junk
 metaDescription: Aenean a vestibulum risus. Aliquam iaculis orci at volutpat
   tincidunt. Integer egestas ornare neque, sit amet rutrum mi condimentum eu.
   Morbi in mattis mi, ultricies tristique augue. Fusce luctus urna sed mi

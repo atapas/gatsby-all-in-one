@@ -1,6 +1,7 @@
 ---
 date: 2020-04-21T08:02:59.066Z
 title: SG - Bengali Text
+category: bengali
 ---
 <!--StartFragment-->
 

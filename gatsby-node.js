@@ -36,6 +36,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
   const tagSet = new Set();
+  const categorySet = new Set();
 
   result.data.allMarkdownRemark.edges.forEach((edge) => {
     
@@ -60,6 +61,18 @@ exports.createPages = async ({ graphql, actions }) => {
         path: `/tags/${_.kebabCase(tag)}/`,
         component: path.resolve(`./src/templates/tagged-post.js`),
         context: { tag }
+      });
+    });
+
+    // Generate for Category
+    if (edge.node.frontmatter.category) {
+      categorySet.add(edge.node.frontmatter.category);
+    }
+    categorySet.forEach(category => {
+      createPage({
+        path: `/categories/${_.kebabCase(category)}/`,
+        component: path.resolve(`./src/templates/category-post.js`),
+        context: { category }
       });
     });
 

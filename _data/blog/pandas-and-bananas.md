@@ -1,7 +1,7 @@
 ---
 date: 2020-04-20T07:52:36.588Z
 title: Pandas and Bananas
-category: "tech"
+category: tech
 tags:
     - panda
     - banana

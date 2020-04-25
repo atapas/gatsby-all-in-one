@@ -1,5 +1,5 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from "react";
+import { graphql } from "gatsby";
 import Layout from "../components/layout/Layout";
 import PostList from '../components/posts/PostList';
 

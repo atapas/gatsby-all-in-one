@@ -3,8 +3,6 @@ import { css } from "@emotion/core";
 import { useStaticQuery, Link, graphql } from "gatsby";
 import { rhythm } from "../../utils/typography";
 
-import CategoryList from '../categories/CategoryList';
-
 export default ({ children }) => {
   const data = useStaticQuery(
     graphql`
@@ -12,6 +10,7 @@ export default ({ children }) => {
         site {
           siteMetadata {
             title
+            description
           }
         }
       }
@@ -26,30 +25,31 @@ export default ({ children }) => {
         padding-top: ${rhythm(1.5)};
       `}
     >
-      
-      <Link to={`/`}>
-        <h3
+      <div>
+        <Link to={`/`}>
+          <h2
+            css={css`
+              display: inline-block;
+              font-style: normal;
+            `}
+          >
+            {data.site.siteMetadata.title}
+          </h2>
+        </Link>
+        <Link
+          to={`/about/`}
           css={css`
-            margin-bottom: ${rhythm(2)};
-            display: inline-block;
-            font-style: normal;
-          `}
-        >
-          {data.site.siteMetadata.title}
-        </h3>
-      </Link>
-      <Link
-        to={`/about/`}
-        css={css`
           float: right;
         `}
-      >
-        About
+        >
+          About
       </Link>
-      <CategoryList />
+        <h4>{data.site.siteMetadata.description}</h4>
+      </div>
+
       {children}
 
-      <footer 
+      <footer
         css={css`
             padding: ${rhythm(0.5)};
             background-color: #ebebeb;

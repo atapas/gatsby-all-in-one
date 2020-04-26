@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Pandas Eating Lots`,
-    description: `Example site to learn gatsby in and out`
+    title: `Write and Publish`,
+    description: `Amazing platform to Write and Publish Content Quickly`
   },
   plugins: [
     {

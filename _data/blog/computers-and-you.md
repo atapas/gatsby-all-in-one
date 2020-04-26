@@ -5,6 +5,7 @@ thumbnail: /assets/giphy.gif
 category: Technology
 tags:
   - devlife
+featured: true
 ---
 # Usage
 

@@ -15,7 +15,7 @@ collections:
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - label: Featured Image
-        name: thumbnail
+        name: cover
         widget: image
         hint: "Image size 1280x800 works best :)"
         required: false

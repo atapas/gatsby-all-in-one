@@ -26,7 +26,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
-            thumbnail
+            cover
             tags
           }
           fields {

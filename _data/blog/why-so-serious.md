@@ -1,7 +1,7 @@
 ---
 date: 2020-04-25T12:19:45.009Z
 title: Why So Serious?
-thumbnail: /assets/javascript-event-loop-why-so-serious-hashnode.png
+cover: /assets/javascript-event-loop-why-so-serious-hashnode.png
 category: Life
 tags:
   - lock-down

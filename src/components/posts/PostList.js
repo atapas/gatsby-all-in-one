@@ -13,25 +13,35 @@ export default (props) => {
                     <Link
                         to={node.fields.slug}
                         css={css`
-                text-decoration: none;
-                color: inherit;
-              `}
+                                text-decoration: none;
+                                color: inherit;
+                            `}
                     >
                         <h3
                             css={css`
-                  margin-bottom: ${rhythm(1 / 4)};
-                `}
+                                margin-bottom: ${rhythm(1 / 4)};
+                            `}
                         >
                             {node.frontmatter.title}{" "}
                             <span
                                 css={css`
-                    color: #555;
-                  `}
+                                    color: #555;
+                                `}
                             >
                                 — {node.frontmatter.date}
                             </span>
                         </h3>
-                        <p>{node.excerpt}</p>
+                        <div>
+                        { node.frontmatter.cover && <img
+                                css={css`
+                                    width: 300px;
+                                    height: 150px;
+                                `} 
+                                src={node.frontmatter.cover} 
+                                alt={node.frontmatter.title} />
+                        }
+                            <p>{node.excerpt}</p>
+                        </div>
                     </Link>
                     <TagCapsules tags={node.frontmatter.tags} />
                 </div>

@@ -36,3 +36,4 @@ collections:
       - label: Featured
         name: featured
         widget: boolean
+        required: false

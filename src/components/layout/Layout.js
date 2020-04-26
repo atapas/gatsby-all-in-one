@@ -51,9 +51,7 @@ export default ({ children }) => {
 
       <footer
         css={css`
-            padding: ${rhythm(0.5)};
-            background-color: #ebebeb;
-            border: 1px solid #ebebeb;
+            margin-top: ${rhythm(2)};
         `}
       >
         <Link to={`/`}>Home</Link> {' | '}

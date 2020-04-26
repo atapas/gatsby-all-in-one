@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./about-css-modules.module.css";
+import styles from "./about-css-modules.module.scss";
 import Layout from "../components/layout/Layout";
 
 console.log(styles);

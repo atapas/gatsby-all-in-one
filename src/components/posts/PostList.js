@@ -2,49 +2,53 @@ import React from "react";
 import TagCapsules from '../tags/TagCapsules';
 import { Link } from "gatsby";
 import { css } from "@emotion/core";
-import { rhythm } from "../../utils/typography";
+
+import styles from './PostList.module.scss';
+
+const Post = props => (
+    <div className={styles.post}>
+        <img src={props.cover} className={styles.cover} alt="" />
+        <div className={styles.description}>
+            <h3 className={styles.postname}>
+                {props.postname} {' '}
+                <span
+                    css={css`
+                            color: #555;
+                        `}
+                >
+                    — {props.postdate}
+                </span>
+            </h3>
+            <p className={styles.excerpt}>{props.excerpt}</p>
+        </div>
+    </div>
+)
 
 export default (props) => {
     return (
         <div>
             <h4>{props.data.allMarkdownRemark.totalCount} Posts</h4>
             {props.data.allMarkdownRemark.edges.map(({ node }) => (
-                <div key={node.id}>
+                <>
                     <Link
+                        key={node.id}
                         to={node.fields.slug}
                         css={css`
-                                text-decoration: none;
-                                color: inherit;
-                            `}
+                            text-decoration: none;
+                            color: inherit;
+                        `}
                     >
-                        <h3
-                            css={css`
-                                margin-bottom: ${rhythm(1 / 4)};
-                            `}
-                        >
-                            {node.frontmatter.title}{" "}
-                            <span
-                                css={css`
-                                    color: #555;
-                                `}
-                            >
-                                — {node.frontmatter.date}
-                            </span>
-                        </h3>
-                        <div>
-                        { node.frontmatter.cover && <img
-                                css={css`
-                                    width: 300px;
-                                    height: 150px;
-                                `} 
-                                src={node.frontmatter.cover} 
-                                alt={node.frontmatter.title} />
-                        }
-                            <p>{node.excerpt}</p>
-                        </div>
+                        <Post
+                            key={node.id}
+                            linkto={node.fields.slug}
+                            postname={node.frontmatter.title}
+                            postdate={node.frontmatter.date}
+                            cover={node.frontmatter.cover}
+                            excerpt={node.excerpt}
+                        />
                     </Link>
                     <TagCapsules tags={node.frontmatter.tags} />
-                </div>
+                </>
             ))}
         </div>
     )

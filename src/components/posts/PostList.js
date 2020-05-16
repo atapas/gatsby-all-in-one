@@ -29,7 +29,7 @@ export default (props) => {
         <div>
             <h4>{props.data.allMarkdownRemark.totalCount} Posts</h4>
             {props.data.allMarkdownRemark.edges.map(({ node }) => (
-                <>
+                <div className={styles.posts}>
                     <Link
                         key={node.id}
                         to={node.fields.slug}
@@ -48,7 +48,7 @@ export default (props) => {
                         />
                     </Link>
                     <TagCapsules tags={node.frontmatter.tags} />
-                </>
+                </div>
             ))}
         </div>
     )

@@ -2,16 +2,20 @@ import React from 'react';
 import _ from "lodash";
 import { Link } from "gatsby";
 
+import styles from "./TagCapsules.module.scss";
+
 const Tag = props => {
     const tag = props.tag;
 
     return (
-        <Link
-            style={{ textDecoration: "none" }}
-            to={`/tags/${_.kebabCase(tag)}`}
-        >
-            <button type="button">{tag}</button>
-        </Link>
+        <li>
+            <Link
+                className={styles.tag}
+                to={`/tags/${_.kebabCase(tag)}`}
+            >
+                {tag}
+            </Link>
+        </li>
     )
 };
 
@@ -19,16 +23,16 @@ const Tagcapsules = props => {
     const tags = props.tags;
     console.log(tags);
     return (
-        <>
+        <ul className={styles.tags}>
             {
                 tags && tags.map((tag) => (
-                    <span key={tag}>
-                        <Tag tag={tag} /> {' '}
-                    </span>
+                    
+                        <Tag tag={tag} key={tag} />
+                    
                 ))
             }
 
-        </>
+        </ul>
     )
 };
 

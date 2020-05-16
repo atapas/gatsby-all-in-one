@@ -21,7 +21,11 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
-            category
+            category {
+              desc
+              image
+              name
+            }
             cover
             tags
           }

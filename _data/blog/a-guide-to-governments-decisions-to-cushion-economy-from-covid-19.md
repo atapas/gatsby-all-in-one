@@ -1,7 +1,10 @@
 ---
 date: 2020-04-28T10:17:13.271Z
 title: A Guide To Government's Decisions To Cushion Economy From COVID-19
-category: Business
+category: 
+  name: Business
+  desc: Something about the Business
+  image: business.jpg
 tags:
   - "#IndianEconomy"
   - "#PostCovid19"

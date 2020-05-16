@@ -1,6 +1,5 @@
 import React from "react";
-import { graphql, useStaticQuery, Link } from "gatsby";
-import _ from "lodash";
+import { graphql, useStaticQuery } from "gatsby";
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -14,54 +13,51 @@ export default () => {
     graphql`
       query {
         allMarkdownRemark {
-          group(field: frontmatter___category) {
+          group(field: frontmatter___category___name) {
             fieldValue
+            totalCount
+            nodes {
+              frontmatter {
+                category {
+                  desc
+                  image
+                }
+              }
+            }
           }
         }
       }`
   );
 
   const categoryList = data.allMarkdownRemark.group;
-  console.log(categoryList);
+  console.log(categoryList[0]);
   return (
     <Container>
       <Row>
         <Col>
-          <CategoryCard />
+          <CategoryCard category = {categoryList[3]}/>
         </Col>
         <Col>
-          Second
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          Third
-        </Col>
-        <Col>
-          Fourth
+          <CategoryCard category = {categoryList[2]}/>
         </Col>
       </Row>
       <Row>
         <Col>
-          Fifth
+          <CategoryCard category = {categoryList[1]}/>
+        </Col>
+        <Col>
+          <CategoryCard category = {categoryList[0]}/>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <CategoryCard category = {categoryList[4]}/>
         </Col>
         <Col>
           Sixth
         </Col>
         <Col>
-          <>
-            {
-              categoryList && categoryList.map((category) => (
-                <Link
-                  key={category.fieldValue}
-                  style={{ textDecoration: "none" }}
-                  to={`/categories/${_.kebabCase(category.fieldValue)}`}>
-                  <button type="button">{category.fieldValue}</button>
-                </Link>
-              ))
-            }
-
-          </>
+          Eighth
         </Col>
         <Col>
           Eight

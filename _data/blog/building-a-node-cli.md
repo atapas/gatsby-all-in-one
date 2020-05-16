@@ -3,7 +3,10 @@ date: 2020-04-25T12:29:33.907Z
 title: Building a NODE CLI
 thumbnail: /assets/giphy.gif
 cover: /assets/title.png
-category: Technology
+category: 
+  name: Technology
+  desc: Something about the Technology
+  image: technology.jpg
 tags:
   - devlife
   - nodejs

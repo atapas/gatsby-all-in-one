@@ -27,7 +27,11 @@ exports.createPages = async ({ graphql, actions }) => {
             frontmatter {
               title
               tags
-              category
+              category {
+                desc
+                image
+                name
+              }
               date
             }
           }
@@ -66,7 +70,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // Generate for Category
     if (edge.node.frontmatter.category) {
-      categorySet.add(edge.node.frontmatter.category);
+      categorySet.add(edge.node.frontmatter.category.name);
     }
     categorySet.forEach(category => {
       createPage({

@@ -1,13 +1,17 @@
 ---
 date: 2020-04-28T10:36:08.194Z
 title: All About Covid-19
-category: Covid-19
+category: 
+  name: COVID19
+  desc: Something about the COVID19
+  image: covid19.jpg
 tags:
   - "#covid-19"
   - "#coronavirus"
 ---
 <div align="justify">
-**Q** What Is COVID-19? <br>
+**Q** What Is COVID-19?
+ <br>
 **A** COVID-19 is the infectious disease caused by the most recently discovered coronavirus. This new virus and disease were unknown before the outbreak began in Wuhan, China, in December 2019.
 
 Q. What Is A Coronavirus?

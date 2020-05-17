@@ -28,36 +28,22 @@ export default () => {
   );
 
   const categoryList = data.allMarkdownRemark.group;
-  console.log(categoryList[0]);
+
+  categoryList.sort((a, b) => b.totalCount - a.totalCount);
+  console.log(categoryList);
+
   return (
     <div className={styles.categoryList}>
-      <div className={styles.category}>
-        <CategoryCard category = {categoryList[3]}/>
-      </div>
-      <div className={styles.category}>  
-        <CategoryCard category = {categoryList[2]}/>
-      </div>
-      <div className={styles.category}>
-        <CategoryCard category = {categoryList[1]}/>
-      </div>
-      <div className={styles.category}>  
-        <CategoryCard category = {categoryList[0]}/> 
-      </div>
-      <div className={styles.category}>
-        <CategoryCard category = {categoryList[4]}/>
-      </div>
-      <div className={styles.category}>  
-        Sixth
-      </div>
-      <div className={styles.category}>  
-        Seventh
-      </div>
-      <div className={styles.category}>  
-        Eight
-      </div>
-    </div>
+      {
+        categoryList && categoryList.map((category) => (
 
+          <div className={styles.category}>
+            <CategoryCard category={category} />
+          </div>
 
+        ))
+      }
+      </div>
   )
 };
 

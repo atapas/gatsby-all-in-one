@@ -7,7 +7,11 @@ import styles from './PostList.module.scss';
 
 const Post = props => (
     <div className={styles.post}>
-        <img src={props.cover} className={styles.cover} alt="" />
+        {
+            props.cover && 
+            <img src={props.cover} className={styles.cover} alt="" />
+        }
+        
         <div className={styles.description}>
             <h3 className={styles.postname}>
                 {props.postname} {' '}

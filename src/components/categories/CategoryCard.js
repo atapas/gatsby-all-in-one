@@ -20,12 +20,11 @@ export default (props) => {
             <Link
                 style={{ textDecoration: "none" }}
                 to={`/categories/${_.kebabCase(category.fieldValue)}`}>
-                <Card className={styles.categoryCard}>
-                    <Card.Body>
+                <Card>
+                    <Card.Body className={styles.headerBody}>
                         <Card.Text>
                             <h4 className={styles.header}>{category.fieldValue}</h4>
                             <span className={styles.subHeader}>{category.totalCount} Post(s)</span>
-                            <p className={styles.desc}>{category.nodes[0].frontmatter.category.desc}</p>
                         </Card.Text>
                     </Card.Body>
                     <Card.Img 

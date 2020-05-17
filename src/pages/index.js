@@ -20,7 +20,7 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <Container className="main">
+      <Container className="main" fluid>
         <Row className="justify-content-md-center">
           <Col xs lg="12">
             <Form inline className="randomSearch">
@@ -38,10 +38,10 @@ export default ({ data }) => {
           </Col>
         </Row>
         <Row>
-          <Col sm={8}>
+          <Col sm={9}>
             <CategoryList />
           </Col>
-          <Col sm={4}>
+          <Col sm={3}>
             <Row>
               <Col>
                 Featured

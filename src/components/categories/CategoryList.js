@@ -1,9 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import styles from "./CategoryList.module.scss";
 
 import CategoryCard from './CategoryCard';
 
@@ -32,38 +30,32 @@ export default () => {
   const categoryList = data.allMarkdownRemark.group;
   console.log(categoryList[0]);
   return (
-    <Container>
-      <Row>
-        <Col>
-          <CategoryCard category = {categoryList[3]}/>
-        </Col>
-        <Col>
-          <CategoryCard category = {categoryList[2]}/>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <CategoryCard category = {categoryList[1]}/>
-        </Col>
-        <Col>
-          <CategoryCard category = {categoryList[0]}/>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <CategoryCard category = {categoryList[4]}/>
-        </Col>
-        <Col>
-          Sixth
-        </Col>
-        <Col>
-          Eighth
-        </Col>
-        <Col>
-          Eight
-        </Col>
-      </Row>
-    </Container>
+    <div className={styles.categoryList}>
+      <div className={styles.category}>
+        <CategoryCard category = {categoryList[3]}/>
+      </div>
+      <div className={styles.category}>  
+        <CategoryCard category = {categoryList[2]}/>
+      </div>
+      <div className={styles.category}>
+        <CategoryCard category = {categoryList[1]}/>
+      </div>
+      <div className={styles.category}>  
+        <CategoryCard category = {categoryList[0]}/> 
+      </div>
+      <div className={styles.category}>
+        <CategoryCard category = {categoryList[4]}/>
+      </div>
+      <div className={styles.category}>  
+        Sixth
+      </div>
+      <div className={styles.category}>  
+        Seventh
+      </div>
+      <div className={styles.category}>  
+        Eight
+      </div>
+    </div>
 
 
   )

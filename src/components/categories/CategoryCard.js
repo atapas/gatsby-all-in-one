@@ -10,8 +10,15 @@ import tech from '../../images/technology.jpg';
 
 export default (props) => {
     let category = props.category;
+    let fromAsset = false;
+    let categoryImage;
     if (category) {
         console.log(category);
+        categoryImage = category.nodes[0].frontmatter.category.image;
+
+        if (categoryImage.indexOf('/assets/') === 0) {
+            fromAsset = true;
+        }
     }
     
     return (
@@ -27,10 +34,18 @@ export default (props) => {
                             <span className={styles.subHeader}>{category.totalCount} Post(s)</span>
                         </Card.Text>
                     </Card.Body>
-                    <Card.Img 
-                        variant="bottom" 
-                        src={require("../../images/" + category.nodes[0].frontmatter.category.image)} 
-                        style={{margin: 0, height: '200px'}}/>
+                    {
+                        fromAsset ?
+                            <Card.Img 
+                                variant="bottom" 
+                                src={categoryImage} 
+                                style={{margin: 0, height: '200px'}}/> :
+                            <Card.Img 
+                                variant="bottom" 
+                                src={require("../../images/" + categoryImage)} 
+                                style={{margin: 0, height: '200px'}}/>     
+                    }
+                    
                 </Card> 
             </Link>: null
         }

@@ -27,9 +27,14 @@ collections:
         name: metaDescription
         widget: text
         required: false
-      - label: Category
+      - label: Category (Upload Image only for New Category)
         name: category 
-        widget: string
+        widget: "object"
+        required: true
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Image", name: "image", widget: "image", required: false}
+        options: ["Business", "Covid19", "Life", "Technology", "Vernacular"]
       - label: Tags
         name: tags
         widget: list

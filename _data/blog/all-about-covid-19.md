@@ -1,7 +1,8 @@
 ---
 date: 2020-04-28T10:36:08.194Z
 title: All About Covid-19
-category: 
+cover: /assets/cover.jpg
+category:
   name: COVID19
   desc: Something about the COVID19
   image: covid19.jpg

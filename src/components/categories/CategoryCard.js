@@ -36,11 +36,11 @@ export default (props) => {
                             <Card.Img 
                                 variant="bottom" 
                                 src={categoryImage} 
-                                style={{margin: 0, height: '200px'}}/> :
+                                style={{margin: 0, height: '200px', width: '270px'}}/> :
                             <Card.Img 
                                 variant="bottom" 
                                 src={require("../../images/" + categoryImage)} 
-                                style={{margin: 0, height: '200px'}}/>     
+                                style={{margin: 0, height: '200px', width: '270px'}}/>     
                     }
                     
                 </Card> 

@@ -11,6 +11,7 @@ import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 
 import CategoryList from '../components/categories/CategoryList';
+import Featured from '../components/featured/Featured';
 
 export default ({ data }) => {
 
@@ -42,9 +43,9 @@ export default ({ data }) => {
             <CategoryList />
           </Col>
           <Col sm={3}>
-            <Row>
+            <Row className="featured">
               <Col>
-                Featured
+                <Featured />
               </Col>
             </Row>
             <Row>

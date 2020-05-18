@@ -13,7 +13,7 @@ export default (props) => {
         console.log(category);
         categoryImage = category.nodes[0].frontmatter.category.image;
 
-        if (categoryImage.indexOf('/assets/') === 0) {
+        if (categoryImage && categoryImage.indexOf('/assets/') === 0) {
             fromAsset = true;
         }
     }

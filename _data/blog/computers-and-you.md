@@ -8,7 +8,7 @@ category:
   image: technology.jpg
 tags:
   - devlife
-featured: true
+featured: false
 ---
 # Usage
 

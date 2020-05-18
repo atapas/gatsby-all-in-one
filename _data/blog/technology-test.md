@@ -5,5 +5,6 @@ category:
   name: Technology
 tags:
   - test
+featured: false
 ---
 Blah

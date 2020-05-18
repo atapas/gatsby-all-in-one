@@ -9,6 +9,7 @@ category:
 tags:
   - lock-down
   - covid-19
+featured: false
 ---
 # Introduction
 Life is short, Why so Serious? Be happy and Less Worried.

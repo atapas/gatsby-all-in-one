@@ -5,9 +5,6 @@ import Card from 'react-bootstrap/Card';
 
 import styles from "./CategoryCard.module.scss";
 
-import tech from '../../images/technology.jpg';
-
-
 export default (props) => {
     let category = props.category;
     let fromAsset = false;

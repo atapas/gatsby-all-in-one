@@ -8,6 +8,7 @@ category:
 tags:
   - "#covid-19"
   - "#coronavirus"
+featured: true
 ---
 <div align="justify">
 **Q** What Is COVID-19?

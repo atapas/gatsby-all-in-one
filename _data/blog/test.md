@@ -6,5 +6,6 @@ category:
   image: /assets/need_prep.gif
 tags:
   - shopping
+featured: false
 ---
 Test

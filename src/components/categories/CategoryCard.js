@@ -8,7 +8,7 @@ import styles from "./CategoryCard.module.scss";
 export default (props) => {
     let category = props.category;
     let fromAsset = false;
-    let categoryImage;
+    let categoryImage = '';
     if (category) {
         console.log(category);
         categoryImage = category.nodes[0].frontmatter.category.image;

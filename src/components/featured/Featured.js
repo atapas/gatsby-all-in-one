@@ -42,7 +42,7 @@ export default () => {
 
     return (
         <Card style={{ width: '17rem' }}>
-            <Card.Img variant="top" src={cover} />
+            <Card.Img variant="top" src={cover} style={{height: '300px'}}/>
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>

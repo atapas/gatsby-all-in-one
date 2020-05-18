@@ -8,10 +8,9 @@ import styles from "./CategoryCard.module.scss";
 export default (props) => {
     let category = props.category;
     let fromAsset = false;
-    let categoryImage = '';
     if (category) {
         console.log(category);
-        categoryImage = category.nodes[0].frontmatter.category.image;
+        let categoryImage = category.nodes[0].frontmatter.category.image;
 
         if (categoryImage && categoryImage.indexOf('/assets/') === 0) {
             fromAsset = true;
@@ -35,11 +34,11 @@ export default (props) => {
                         fromAsset ?
                             <Card.Img 
                                 variant="bottom" 
-                                src={categoryImage} 
+                                src={category.nodes[0].frontmatter.category.image} 
                                 style={{margin: 0, height: '200px', width: '270px'}}/> :
                             <Card.Img 
                                 variant="bottom" 
-                                src={require("../../images/" + categoryImage)} 
+                                src={require("../../images/" + category.nodes[0].frontmatter.category.image)} 
                                 style={{margin: 0, height: '200px', width: '270px'}}/>     
                     }
                     

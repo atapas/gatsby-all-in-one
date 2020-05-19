@@ -1,10 +1,7 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-
-import styles from "./CategoryList.module.scss";
+import { graphql, useStaticQuery, Link } from "gatsby";
 
 import CategoryCard from './CategoryCard';
-
 
 export default () => {
   const data = useStaticQuery(
@@ -28,19 +25,20 @@ export default () => {
   );
 
   const categoryList = data.allMarkdownRemark.group;
-
   categoryList.sort((a, b) => b.totalCount - a.totalCount);
+  categoryList.length = 6;
+
   console.log(categoryList);
-
+  
   return (
-    <div className={styles.categoryList}>
+   
+     <div className="home-featured-categories">
       {
-        categoryList && categoryList.map((category) => (
-
-          <div className={styles.category}>
-            <CategoryCard category={category} />
+        categoryList && categoryList.map((category, index) => (
+          
+          <div className={`category-item level--${index+1}`} key={index}>
+            <CategoryCard category = { category } />
           </div>
-
         ))
       }
       </div>

@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 import _ from "lodash";
-import Card from 'react-bootstrap/Card';
-
-import styles from "./CategoryCard.module.scss";
 
 export default (props) => {
     let category = props.category;

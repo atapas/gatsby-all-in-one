@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-
+import _ from "lodash";
 import CategoryCard from './CategoryCard';
 
 export default () => {
@@ -26,15 +26,15 @@ export default () => {
 
   const categoryList = data.allMarkdownRemark.group;
   categoryList.sort((a, b) => b.totalCount - a.totalCount);
-  categoryList.length = 6;
 
-  console.log(categoryList);
+  let categoryAsCards = categoryList.slice(0, 6);
+  let categoryAsLinks = categoryList.slice(6);
   
   return (
-   
+   <>
      <div className="home-featured-categories">
       {
-        categoryList && categoryList.map((category, index) => (
+        categoryAsCards && categoryAsCards.map((category, index) => (
           
           <div className={`category-item level--${index+1}`} key={index}>
             <CategoryCard category = { category } />
@@ -42,6 +42,23 @@ export default () => {
         ))
       }
       </div>
+      <p className="p-light--sm text-center">
+        There is a lot more to read about, choose your area of interest
+      </p>
+      <ul className="home-categories text-center">
+        {
+          categoryAsLinks.map((category, index) => (
+            <li key={index}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to={`/categories/${_.kebabCase(category.fieldValue)}`}>
+                  {category.fieldValue}
+              </Link>
+            </li>
+          ))
+        }
+      </ul>
+    </>
   )
 };
 

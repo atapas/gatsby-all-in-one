@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../components/layout/Layout";
 
 import CategoryList from '../components/categories/CategoryList';
+import Feature from '../components/featured/Featured';
 
 export default ({ data }) => {
 
@@ -17,7 +18,12 @@ export default ({ data }) => {
           </h2>
           <CategoryList />
         </div>
-      </div>
+        <div class="hero-sidebar">
+          <Feature /> 
+        </div>  
+   
+    </div>
+    
     </Layout>
   )
 }

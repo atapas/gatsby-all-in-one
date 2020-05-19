@@ -41,18 +41,19 @@ export default () => {
     console.log(featuredNode);
 
     return (
-        <Card style={{ width: '17rem' }}>
-            <Card.Img variant="top" src={cover} style={{height: '300px'}}/>
-            <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Text>
-                    {excerpt}
-                </Card.Text>
-                <Link to={slug}>
-                    <Button variant="primary">Read the Full Story!</Button>
-                </Link>
-            </Card.Body>
-        </Card>
+        <div class="featured-article">
+            <div class="featured-article__thumb">
+                <div class="tag-categories">
+                    <a href="#" class="tag">Lifestyle</a>
+                    <a href="#" class="tag">India</a>
+                </div>
+                <img src={ cover } />
+            </div>
+            <h4 class="featured-article__title">
+                <h5>{ title }</h5>
+                <Link style={{ textDecoration: "none" }} to={ slug }> { excerpt } </Link>
+            </h4>
+        </div>
     )
 };
 

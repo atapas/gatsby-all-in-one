@@ -1,0 +1,15 @@
+// Mixins
+@mixin category-shadow() {
+    transform: scale(1.4);
+    box-shadow: 0 0 8px 6px rgba(0, 0, 0, 0.2);
+}
+
+@mixin shadow-article() {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px 6px rgba($color-grey, 0.4);
+    z-index: 2;
+}
+
+@mixin basic-transition() {
+    transition: all 0.3s ease-in-out;
+}

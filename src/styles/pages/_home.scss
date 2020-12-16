@@ -1,0 +1,188 @@
+// Sections
+//
+// Section - Hero
+.section-hero { 
+    display: grid;
+    grid-template-rows: minmax(100vh, min-content);
+    grid-template-columns: 1.6fr 1fr;
+    
+  //   display: flex;
+  //   flex-direction: row;
+  //   align-items: flex-start;
+    
+  //   min-height: 100vh;
+    margin-bottom: 48px;
+    box-sizing: border-box;
+    
+   .hero-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 0;
+      flex-basis: 60%;
+    }
+    
+    
+    
+    .hero-sidebar {
+      flex-basis: 40%;
+      border-radius: 1rem;
+      margin: 8px;
+      padding: 24px;
+      background-color: $color-grey-light;
+    }
+  }
+  
+  // Home page Title
+.page-title--home {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    
+    span {
+      font-size: 1.4vw;
+      font-weight: 300;
+      color: $color-grey;
+    }
+    
+    strong {
+      display: block;
+      font-size: 2.4vw;
+      color: $color-secondary-dark;
+    }
+  }
+  
+  .home-featured-categories {
+    width: 80%;
+    margin: 32px auto;
+   
+    display: grid;
+    grid-gap: 16px;
+    grid-template-rows: repeat(2, 150px);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "level3 level3 level1 level1 level4"
+                         "level5 level6 level1 level1 level2";
+    
+    transition: all 0.5s ease-in-out;
+    
+    @media screen and (max-width: 1200px) {
+      grid-template-rows: repeat(3, 150px);
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "level3 level3 level1 level1"
+                           "level5 level6 level1 level1"
+                           "level4 level4 level2 level2";
+    }
+    
+    @media screen and (max-width: 768px) {
+      grid-template-rows: repeat(5, 150px);
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "level1 level1"
+                           "level2 level2"
+                           "level3 level4"
+                           "level5 level5"
+                           "level6 level6";
+    }
+    
+    @media screen and (max-width: 640px) {
+      grid-template-rows: repeat(6, 150px);
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas: "level1"
+                           "level2"
+                           "level3"
+                           "level4"
+                           "level5"
+                           "level6";
+    }
+    
+    .category-item {
+      padding: 24px;
+      background-color: #cccccc;
+      box-sizing: border-box;
+      border-radius: 8px;
+      transition: all 0.2s ease-in-out;
+      
+      &:hover {
+        @include category-shadow;
+      }
+      
+      &__title {
+        margin: 0;
+        font-size: 1.18rem;
+        letter-spacing: 0.0250em;
+        font-weight: bold;
+        color: #ffffff;
+      }
+      
+      &.level--1 {
+        background-color: $color-l1;
+        grid-area: level1;
+      }
+      
+      &.level--2 {
+        background-color: $color-l2;
+        grid-area: level2;
+      }
+      
+      &.level--3 {
+        background-color: $color-l3;
+        grid-area: level3;
+      }
+      
+      &.level--4 {
+        background-color: $color-l4;
+        grid-area: level4;
+      }
+      
+      &.level--5 {
+        background-color: $color-l5;
+        grid-area: level5;
+      }
+      
+      &.level--6 {
+        background-color: $color-l6;
+        grid-area: level6;
+      }
+    }
+  }
+
+// Home Categories
+.home-categories {
+    &, li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+    @media screen and (max-width: 768px) {
+      width: 80%;    
+      margin: 0 auto 32px auto;
+    }
+    
+    li {
+      display: inline-block;
+      
+      a:after {
+        content: ",";
+      }
+      
+      &:last-child a {
+        &:after {
+          content: "";
+        }
+      }
+    }
+    a {
+      @include basic-transition;
+      font-size: 1rem;
+      font-weight: 500;
+      color: $color-secondary;
+      text-decoration: none;
+      
+      &:hover {
+        font-weight: 700;
+        color: $color-primary-dark;
+        text-decoration: underline;
+      }
+    }
+  }
